@@ -1,0 +1,92 @@
+{
+    "caliper": {
+        "blockchain": "ethereum"
+    },
+    "ethereum": {
+        "url": "ws://13.214.37.176:9545",
+        "contractDeployerAddress": "0x5f7DC4f31c290F337C6a62Ef237dBA4C7862714C",
+        "contractDeployerAddressPrivateKey": "aa8b006bd97e45ee2d0b8096851f7c1bebef3ebaa7a34d0cdc27309cfa007831",
+        "fromAddressSeed": "xprv9s21ZrQH143K3SsefnBXozqSLuBgqTK8s2X7pzcbXuHJyPF3oiPMJSjMURA9dKjV6zjqbKfRrnzb4aMmrPXTzpKY8i6DBQye3SK7zr5RGcR",
+        "transactionConfirmationBlocks": 2,
+        "contracts": {
+            "simple": {
+                "path": "./src/ethereum/simple/simple.json",
+                "address": "0x4B5F0aB0C7aEdcD6Fc560a25c547fB5D954F5266",
+                "estimateGas": true,
+                "gas": {
+                    "transfer": 70000,
+                    "query": 100000,
+                    "open": 100000
+                },
+                "abi": [
+                    {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "acc_from",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "acc_to",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "int256",
+                                "name": "amount",
+                                "type": "int256"
+                            }
+                        ],
+                        "name": "transfer",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "acc_id",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "query",
+                        "outputs": [
+                            {
+                                "internalType": "int256",
+                                "name": "amount",
+                                "type": "int256"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "acc_id",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "int256",
+                                "name": "amount",
+                                "type": "int256"
+                            }
+                        ],
+                        "name": "open",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ]
+            }
+        }
+    }
+}
