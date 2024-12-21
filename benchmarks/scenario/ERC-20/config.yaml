@@ -7,15 +7,15 @@ test:
   description: >-
     To benchmark transferring tokens between accounts.
   workers:
-    number: 4
+    number: 3
   rounds:
-    - label: 1000000 txns with 40tps
+    - label: 1000000 txns with 20tps
       description: Test description for transfering money between accounts.
       txNumber: 1000000
       rateControl:
         type: fixed-rate
         opts:
-          tps: 40
+          tps: 20
       workload:
         module: benchmarks/scenario/ERC-20/transfer.js
         arguments:

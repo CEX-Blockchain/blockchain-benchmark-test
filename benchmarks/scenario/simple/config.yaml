@@ -9,7 +9,7 @@ test:
     This is an example benchmark for Caliper, to test the backend DLT's
     performance with simple account opening & querying transactions.
   workers:
-    number: 4
+    number: 3
   rounds:
     - label: open
       description: >-
@@ -19,7 +19,7 @@ test:
       rateControl:
         type: fixed-rate
         opts:
-          tps: 40
+          tps: 20
       workload:
         module: benchmarks/scenario/simple/open.js
         arguments: *simple-args
@@ -29,7 +29,7 @@ test:
       rateControl:
         type: fixed-rate
         opts:
-          tps: 150
+          tps: 80
       workload:
         module: benchmarks/scenario/simple/query.js
         arguments: *simple-args
@@ -39,7 +39,7 @@ test:
       rateControl:
         type: fixed-rate
         opts:
-          tps: 40
+          tps: 20
       workload:
         module: benchmarks/scenario/simple/transfer.js
         arguments:
